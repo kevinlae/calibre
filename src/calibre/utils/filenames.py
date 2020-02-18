@@ -466,9 +466,11 @@ class WindowsAtomicFolderMove(object):
         self.handle_map = {}
 
     def delete_originals(self):
-        import win32file
+        #import win32file
+        import os
         for path in self.handle_map:
-            win32file.DeleteFile(path)
+            #win32file.DeleteFile(path)
+            os.remove(path)
         self.close_handles()
 
 
